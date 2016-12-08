@@ -16,8 +16,8 @@
 <hr>
 
 <p>List from array:</p>
-<ul *ngFor='#element of mylist'><!-- iterate array mylist from AppComponent -->
-	<li>Year: {{jvClassProps.year}}</li>
-	<li>Random text: {{jvClassProps.randomtext}}</li>
+<ul *ngFor='#element of mylist'><!-- iterate array mylist from AppComponent & *ngIf to check if isset -->
+	<li *ngIf='element.year'>Year: {{jvClassProps.year}}</li>
+	<li *ngIf='element.randomtext'>Random text: {{jvClassProps.randomtext}}</li>
 </ul>
 
