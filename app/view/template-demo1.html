@@ -1,9 +1,14 @@
 <h1>{{title}}, an Angular 2 App</h1>
 <p>Year: {{jvClassProps.year}}</p>
 
+<!-- test ng class to add .displayme on click -->
 <button (click)='displayData(true)' [class.displayme]='showData === true'>Show hidden text</button>
 <button (click)='displayData(false)' [class.displayme]='showData === false'>Hide hidden text</button>
 
 <div *ngIf='showData === true'><!-- test ng if directive -->
 	<p>Text: {{jvClassProps.randomtext}}</p>
+</div>
+
+<div>
+	<label>Two way data binding example (year): </label><input type="text" [(ngModel)]='jvClassProps.year' />
 </div>
