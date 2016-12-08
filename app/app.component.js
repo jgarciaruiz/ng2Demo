@@ -24,6 +24,7 @@ System.register(['angular2/core', './model/jvclass'], function(exports_1, contex
             AppComponent = (function () {
                 function AppComponent() {
                     this.title = "JV";
+                    this.showData = true; //change it to false to hide "randomtext" in template-demo1
                     this.jvClassProps = new jvclass_1.jvComponent(2016, "This is a random text"); //jvComponent params = year, randomtext
                     this.debug();
                 }

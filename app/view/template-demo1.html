@@ -1,3 +1,6 @@
 <h1>{{title}}, an Angular 2 App</h1>
 <p>Year: {{jvClassProps.year}}</p>
-<p>Text: {{jvClassProps.randomtext}}</p>
+
+<div *ngIf='showData === true'><!-- test ng if directive -->
+	<p>Text: {{jvClassProps.randomtext}}</p>
+</div>

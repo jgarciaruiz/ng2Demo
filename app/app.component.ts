@@ -12,7 +12,11 @@ export class AppComponent {
 	public title:string = "JV";
 	public jvClassProps:jvComponent; // <--- property "jvClassProps" type "jvComponent" (imported from jvclass.ts)
 
+	public showData:boolean; // <-- to test ngif directive 
+
 	constructor(){ // <--- default values for app launch
+		this.showData = true; //change it to false to hide "randomtext" in template-demo1
+
 		this.jvClassProps = new jvComponent(2016, "This is a random text"); //jvComponent params = year, randomtext
 		this.debug();
 	}
