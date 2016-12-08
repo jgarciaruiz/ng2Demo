@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './model/jvclass'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,27 +10,28 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, jvclass_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (jvclass_1_1) {
+                jvclass_1 = jvclass_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    //properties
-                    this.title = "JV"; // <--- template value for {title}
-                    this.year = 2016;
-                    this.year = new Date().getFullYear();
-                    this.randomMethod();
+                    this.title = "JV";
+                    this.jvClassProps = new jvclass_1.jvComponent(2016, "This is a random text"); //jvComponent params = year, randomtext
+                    this.debug();
                 }
-                AppComponent.prototype.randomMethod = function () {
-                    alert("Everything is fine in " + this.year);
+                AppComponent.prototype.debug = function () {
+                    console.log(this.jvClassProps);
                 };
                 AppComponent = __decorate([
-                    // <-- importing Component from core
+                    // <-- importing custom component
                     core_1.Component({
                         selector: 'jv-app',
                         //template: '<h1>{{title}}, an Angular 2 App</h1>' // <---this is the template to put in the component.

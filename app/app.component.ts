@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core'; // <-- importing Component from core
+import {jvComponent} from './model/jvclass'; // <-- importing custom component
 
 @Component({
     selector: 'jv-app', //<----the element defined in the index.html
@@ -7,17 +8,16 @@ import {Component} from 'angular2/core'; // <-- importing Component from core
 })
 
 export class AppComponent {
-	//properties
-	public title:string = "JV";// <--- template value for {title}
-	public year:number = 2016;
+	public title:string = "JV";
+	public jvClassProps:jvComponent; // <--- property "jvClassProps" type "jvComponent" (imported from jvclass.ts)
 
-	constructor(){ // <--- default values fo app launch
-		this.year = new Date().getFullYear();
-		this.randomMethod();
+	constructor(){ // <--- default values for app launch
+		this.jvClassProps = new jvComponent(2016, "This is a random text"); //jvComponent params = year, randomtext
+		this.debug();
 	}
 
-	randomMethod(){ //<--- 
-		alert("Everything is fine in "+this.year);
+	debug(){ //<--- method
+		console.log(this.jvClassProps);
 	}
 
 } // <--- we need to export the class AppComponent. 
