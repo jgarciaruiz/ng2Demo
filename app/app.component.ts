@@ -26,12 +26,8 @@ export class AppComponent {
 		console.log(this.jvClassProps);
 	}
 
-	showDataTrue(){
-		this.showData = true;
-	}
-
-	showDataFalse(){
-		this.showData = false;	
+	displayData(val){
+		this.showData = val;
 	}
 
 } // <--- we need to export the class AppComponent. 

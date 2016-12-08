@@ -1,8 +1,8 @@
 <h1>{{title}}, an Angular 2 App</h1>
 <p>Year: {{jvClassProps.year}}</p>
 
-<button (click)='showDataTrue()' [class.displayme]='showData === true'>Show hidden text</button>
-<button (click)='showDataFalse()' [class.displayme]='showData === false'>Hide hidden text</button>
+<button (click)='displayData(true)' [class.displayme]='showData === true'>Show hidden text</button>
+<button (click)='displayData(false)' [class.displayme]='showData === false'>Hide hidden text</button>
 
 <div *ngIf='showData === true'><!-- test ng if directive -->
 	<p>Text: {{jvClassProps.randomtext}}</p>

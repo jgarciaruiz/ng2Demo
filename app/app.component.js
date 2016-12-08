@@ -32,11 +32,8 @@ System.register(['angular2/core', './model/jvclass'], function(exports_1, contex
                 AppComponent.prototype.debug = function () {
                     console.log(this.jvClassProps);
                 };
-                AppComponent.prototype.showDataTrue = function () {
-                    this.showData = true;
-                };
-                AppComponent.prototype.showDataFalse = function () {
-                    this.showData = false;
+                AppComponent.prototype.displayData = function (val) {
+                    this.showData = val;
                 };
                 AppComponent = __decorate([
                     // <-- importing custom component
