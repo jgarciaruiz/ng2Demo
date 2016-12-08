@@ -35,7 +35,8 @@ System.register(['angular2/core', './model/jvclass'], function(exports_1, contex
                     core_1.Component({
                         selector: 'jv-app',
                         //template: '<h1>{{title}}, an Angular 2 App</h1>' // <---this is the template to put in the component.
-                        templateUrl: 'app/view/template-demo1.html'
+                        templateUrl: 'app/view/template-demo1.html',
+                        styleUrls: ['../assets/css/style.css'] // <--- this component css only
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
