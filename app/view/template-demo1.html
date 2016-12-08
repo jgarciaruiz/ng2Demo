@@ -10,5 +10,5 @@
 </div>
 
 <div>
-	<label>Two way data binding example (year): </label><input type="text" [(ngModel)]='jvClassProps.year' />
+	<label>Two way data binding example (year): </label><input type="text" (keypress)='debug()' [(ngModel)]='jvClassProps.year' />
 </div>
