@@ -15,14 +15,23 @@ export class AppComponent {
 	public showData:boolean; // <-- to test ngif directive 
 
 	constructor(){ // <--- default values for app launch
-		this.showData = true; //change it to false to hide "randomtext" in template-demo1
+		this.showData = false; //change it to false to hide "randomtext" in template-demo1
 
 		this.jvClassProps = new jvComponent(2016, "This is a random text"); //jvComponent params = year, randomtext
 		this.debug();
 	}
 
-	debug(){ //<--- method
+	//methods
+	debug(){
 		console.log(this.jvClassProps);
+	}
+
+	showDataTrue(){
+		this.showData = true;
+	}
+
+	showDataFalse(){
+		this.showData = false;	
 	}
 
 } // <--- we need to export the class AppComponent. 

@@ -24,12 +24,19 @@ System.register(['angular2/core', './model/jvclass'], function(exports_1, contex
             AppComponent = (function () {
                 function AppComponent() {
                     this.title = "JV";
-                    this.showData = true; //change it to false to hide "randomtext" in template-demo1
+                    this.showData = false; //change it to false to hide "randomtext" in template-demo1
                     this.jvClassProps = new jvclass_1.jvComponent(2016, "This is a random text"); //jvComponent params = year, randomtext
                     this.debug();
                 }
+                //methods
                 AppComponent.prototype.debug = function () {
                     console.log(this.jvClassProps);
+                };
+                AppComponent.prototype.showDataTrue = function () {
+                    this.showData = true;
+                };
+                AppComponent.prototype.showDataFalse = function () {
+                    this.showData = false;
                 };
                 AppComponent = __decorate([
                     // <-- importing custom component
