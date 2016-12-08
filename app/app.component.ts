@@ -9,15 +9,27 @@ import {jvComponent} from './model/jvclass'; // <-- importing custom component
 })
 
 export class AppComponent {
-	public title:string = "JV";
-	public jvClassProps:jvComponent; // <--- property "jvClassProps" type "jvComponent" (imported from jvclass.ts)
+	public title:string = 'JV';
+	public jvClassProps:jvComponent; // <--- property 'jvClassProps' type 'jvComponent' (imported from jvclass.ts)
 
 	public showData:boolean; // <-- to test ngif directive 
 
-	constructor(){ // <--- default values for app launch
-		this.showData = false; //change it to false to hide "randomtext" in template-demo1
+	public mylist:Array<jvComponent>; // <-- string array to test *ngFor
 
-		this.jvClassProps = new jvComponent(2016, "This is a random text"); //jvComponent params = year, randomtext
+	constructor(){ // <--- default values for app launch
+		this.showData = false; //change it to false to hide 'randomtext' in template-demo1
+
+		this.jvClassProps = new jvComponent(2016, 'This is a random text'); //jvComponent params = year, randomtext
+		
+		this.mylist = [
+			new jvComponent(2016, 'This is a random text 01'),
+			new jvComponent(2015, 'This is a random text 02'),
+			new jvComponent(2014, 'This is a random text 03'),
+			new jvComponent(2013, 'This is a random text 04'),
+			new jvComponent(2012, 'This is a random text 05'),
+			new jvComponent(2011, 'This is a random text 06')
+		];
+
 		this.debug();
 	}
 

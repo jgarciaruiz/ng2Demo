@@ -23,9 +23,17 @@ System.register(['angular2/core', './model/jvclass'], function(exports_1, contex
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    this.title = "JV";
-                    this.showData = false; //change it to false to hide "randomtext" in template-demo1
-                    this.jvClassProps = new jvclass_1.jvComponent(2016, "This is a random text"); //jvComponent params = year, randomtext
+                    this.title = 'JV';
+                    this.showData = false; //change it to false to hide 'randomtext' in template-demo1
+                    this.jvClassProps = new jvclass_1.jvComponent(2016, 'This is a random text'); //jvComponent params = year, randomtext
+                    this.mylist = [
+                        new jvclass_1.jvComponent(2016, 'This is a random text 01'),
+                        new jvclass_1.jvComponent(2015, 'This is a random text 02'),
+                        new jvclass_1.jvComponent(2014, 'This is a random text 03'),
+                        new jvclass_1.jvComponent(2013, 'This is a random text 04'),
+                        new jvclass_1.jvComponent(2012, 'This is a random text 05'),
+                        new jvclass_1.jvComponent(2011, 'This is a random text 06')
+                    ];
                     this.debug();
                 }
                 //methods

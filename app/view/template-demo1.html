@@ -12,3 +12,12 @@
 <div>
 	<label>Two way data binding example (year): </label><input type="text" (keypress)='debug()' [(ngModel)]='jvClassProps.year' />
 </div>
+
+<hr>
+
+<p>List from array:</p>
+<ul *ngFor='#element of mylist'><!-- iterate array mylist from AppComponent -->
+	<li>Year: {{jvClassProps.year}}</li>
+	<li>Random text: {{jvClassProps.randomtext}}</li>
+</ul>
+
