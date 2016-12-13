@@ -18,10 +18,8 @@ export class AppComponent {
 
 	public showData:boolean; // <-- to test ngif directive 
 
-	public mylist:Array<jvComponent>; // <-- array to test *ngFor
-
 	public dataService:any; // <-- to store later whatever the method returns
-	public dataServiceArray:any; // <-- to store later whatever the method returns
+	public dataServiceArray:Array<jvComponent>; // <-- to store later whatever the method returns
 
 	//default values for app launch
 	constructor(private _javiService:JaviService){ // <--- private attr to allow access to my custom service 
@@ -33,21 +31,8 @@ export class AppComponent {
 
 		this.jvClassProps = new jvComponent(2016, 'This is a random text'); //jvComponent params = year, randomtext
 		this.debug();		
-
-		//commented, 'coz now its brought via javi.service getJaviDemoArray()
-		/*				
-		this.mylist = [
-			new jvComponent(2016, 'This is a random text 01'),
-			new jvComponent(2015, 'This is a random text 02'),
-			new jvComponent(2014, 'This is a random text 03'),
-			new jvComponent(2013, 'This is a random text 04'),
-			new jvComponent(2012, 'This is a random text 05'),
-			new jvComponent(2011, 'This is a random text 06')
-		];
-		*/
+		
 		this.dataServiceArray = this._javiService.getJaviDemoArray();
-
-
 	}
 
 	//methods
@@ -58,6 +43,11 @@ export class AppComponent {
 	//function used in other templates, for example displayData() is being called in template-demo1.html
 	displayData(val){
 		this.showData = val;
+	}
+
+	editRandomText(newText){
+		console.log(newText);
+		this.jvClassProps = newText; // <-- get clicked item text and update input value with it
 	}
 
 } // <--- we need to export the class AppComponent. 

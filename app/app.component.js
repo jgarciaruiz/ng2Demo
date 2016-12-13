@@ -34,17 +34,6 @@ System.register(['angular2/core', './model/jvclass', './services/javi.service'],
                     this.showData = false; //change it to false to hide 'randomtext' in template-demo1
                     this.jvClassProps = new jvclass_1.jvComponent(2016, 'This is a random text'); //jvComponent params = year, randomtext
                     this.debug();
-                    //commented, 'coz now its brought via javi.service getJaviDemoArray()
-                    /*
-                    this.mylist = [
-                        new jvComponent(2016, 'This is a random text 01'),
-                        new jvComponent(2015, 'This is a random text 02'),
-                        new jvComponent(2014, 'This is a random text 03'),
-                        new jvComponent(2013, 'This is a random text 04'),
-                        new jvComponent(2012, 'This is a random text 05'),
-                        new jvComponent(2011, 'This is a random text 06')
-                    ];
-                    */
                     this.dataServiceArray = this._javiService.getJaviDemoArray();
                 }
                 //methods
@@ -54,6 +43,10 @@ System.register(['angular2/core', './model/jvclass', './services/javi.service'],
                 //function used in other templates, for example displayData() is being called in template-demo1.html
                 AppComponent.prototype.displayData = function (val) {
                     this.showData = val;
+                };
+                AppComponent.prototype.editRandomText = function (newText) {
+                    console.log(newText);
+                    this.jvClassProps = newText; // <-- get clicked item text and update input value with it
                 };
                 AppComponent = __decorate([
                     // <-- import service

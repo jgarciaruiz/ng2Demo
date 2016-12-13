@@ -19,9 +19,15 @@
 
 <ul *ngFor='#element of dataServiceArray'><!-- iterate array mylist from AppComponent & *ngIf to check if isset -->
 	<li *ngIf='element.year'>Year: {{element.year}}</li>
-	<li *ngIf='element.randomtext'>Random text: {{element.randomtext}}</li>
+	<li *ngIf='element.randomtext' (click)='editRandomText(element)'>Random text: {{element.randomtext}}</li>
 </ul>
 
 <hr>
 
 <em>{{dataService}}</em>
+
+<hr>
+
+<div>
+	<label>Edit list value(ng-Model): </label><input type="text" [(ngModel)]='jvClassProps.randomtext' /><!-- jvClassProps.randomtext value to 2 way data bind -->
+</div>
