@@ -18,19 +18,24 @@ export class AppComponent {
 
 	public showData:boolean; // <-- to test ngif directive 
 
-	public mylist:Array<jvComponent>; // <-- string array to test *ngFor
+	public mylist:Array<jvComponent>; // <-- array to test *ngFor
 
-	public dataService; // <-- to store later whatever the method returns
+	public dataService:any; // <-- to store later whatever the method returns
+	public dataServiceArray:any; // <-- to store later whatever the method returns
 
 	//default values for app launch
 	constructor(private _javiService:JaviService){ // <--- private attr to allow access to my custom service 
 		
 		this.dataService = this._javiService.getJaviDemo(); // <-- store service data method results
+		console.log(this.dataService);
 
 		this.showData = false; //change it to false to hide 'randomtext' in template-demo1
 
 		this.jvClassProps = new jvComponent(2016, 'This is a random text'); //jvComponent params = year, randomtext
-		
+		this.debug();		
+
+		//commented, 'coz now its brought via javi.service getJaviDemoArray()
+		/*				
 		this.mylist = [
 			new jvComponent(2016, 'This is a random text 01'),
 			new jvComponent(2015, 'This is a random text 02'),
@@ -39,8 +44,10 @@ export class AppComponent {
 			new jvComponent(2012, 'This is a random text 05'),
 			new jvComponent(2011, 'This is a random text 06')
 		];
+		*/
+		this.dataServiceArray = this._javiService.getJaviDemoArray();
 
-		this.debug();
+
 	}
 
 	//methods
@@ -48,6 +55,7 @@ export class AppComponent {
 		console.log(this.jvClassProps);
 	}
 
+	//function used in other templates, for example displayData() is being called in template-demo1.html
 	displayData(val){
 		this.showData = val;
 	}

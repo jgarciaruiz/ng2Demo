@@ -30,22 +30,28 @@ System.register(['angular2/core', './model/jvclass', './services/javi.service'],
                     this._javiService = _javiService;
                     this.title = 'JV';
                     this.dataService = this._javiService.getJaviDemo(); // <-- store service data method results
+                    console.log(this.dataService);
                     this.showData = false; //change it to false to hide 'randomtext' in template-demo1
                     this.jvClassProps = new jvclass_1.jvComponent(2016, 'This is a random text'); //jvComponent params = year, randomtext
-                    this.mylist = [
-                        new jvclass_1.jvComponent(2016, 'This is a random text 01'),
-                        new jvclass_1.jvComponent(2015, 'This is a random text 02'),
-                        new jvclass_1.jvComponent(2014, 'This is a random text 03'),
-                        new jvclass_1.jvComponent(2013, 'This is a random text 04'),
-                        new jvclass_1.jvComponent(2012, 'This is a random text 05'),
-                        new jvclass_1.jvComponent(2011, 'This is a random text 06')
-                    ];
                     this.debug();
+                    //commented, 'coz now its brought via javi.service getJaviDemoArray()
+                    /*
+                    this.mylist = [
+                        new jvComponent(2016, 'This is a random text 01'),
+                        new jvComponent(2015, 'This is a random text 02'),
+                        new jvComponent(2014, 'This is a random text 03'),
+                        new jvComponent(2013, 'This is a random text 04'),
+                        new jvComponent(2012, 'This is a random text 05'),
+                        new jvComponent(2011, 'This is a random text 06')
+                    ];
+                    */
+                    this.dataServiceArray = this._javiService.getJaviDemoArray();
                 }
                 //methods
                 AppComponent.prototype.debug = function () {
                     console.log(this.jvClassProps);
                 };
+                //function used in other templates, for example displayData() is being called in template-demo1.html
                 AppComponent.prototype.displayData = function (val) {
                     this.showData = val;
                 };

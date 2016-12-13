@@ -15,10 +15,11 @@
 
 <hr>
 
-<p>List from array:</p>
-<ul *ngFor='#element of mylist'><!-- iterate array mylist from AppComponent & *ngIf to check if isset -->
-	<li *ngIf='element.year'>Year: {{jvClassProps.year}}</li>
-	<li *ngIf='element.randomtext'>Random text: {{jvClassProps.randomtext}}</li>
+<p>List from array <small>(via service method getJaviDemoArray())</small>:</p>
+
+<ul *ngFor='#element of dataServiceArray'><!-- iterate array mylist from AppComponent & *ngIf to check if isset -->
+	<li *ngIf='element.year'>Year: {{element.year}}</li>
+	<li *ngIf='element.randomtext'>Random text: {{element.randomtext}}</li>
 </ul>
 
 <hr>
